@@ -1,0 +1,5 @@
+
+Showing All Messages, Filtering for "Requested but did not find extension point with identifier Xcode.InterfaceBuilderBuildSupport.PlatformDefinition".
+
+
+Build failed    12/19/23, 11:34 AM    4.6 seconds
