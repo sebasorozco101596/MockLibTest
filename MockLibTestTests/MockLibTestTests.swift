@@ -23,20 +23,49 @@ final class MockLibTestTests: XCTestCase {
 //        let mock2: MockTwoProtocol = mock(MockLibTest.MockTwoProtocol.self) as! MockTwoProtocol
         
 //        let mock = mock(MockTwoProtocol.self)
-        
-        let mock = mock(MockLibTest.MockTwoProtocol.self)
-        
-        given(mock.canWalk()).willReturn(true)
-////
-        XCTAssertTrue(mock.canWalk())
+//        
+//        let mock = mock(MockLibTest.MockTwoProtocol.self)
+//        
+//        given(mock.canWalk()).willReturn(true)
+//////
+//        XCTAssertTrue(mock.canWalk())
 //        let mock: MockTwoProtocolMock? = nil
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testShouldRun() {
+//        let userProtocol = mock(MockLibTest.MockTwoProtocol.self)
+//        let user = MockTwo(actions: userProtocol, isWalking: false)
+//        
+//        given(userProtocol.canWalk()).will { return true }
+//        
+//        user.shouldRun()
+//        
+//        verify(userProtocol.canJump()).wasCalled()
+//        XCTAssertTrue(user.isWalking)
+        
+        let action = mock(MockTwoProtocol.self)
+        let user = MockTwo(actions: action, isWalking: true)
+        
+        given(action.canWalk()) ~> true
+        
+        user.shouldRun()
+        
+        verify(action.canJump()).wasCalled()
+        XCTAssertTrue(user.isWalking)
+        
+    }
+    
+    func testShakingTreeCausesBirdToFly() {
+      // Given a tree with a bird that can fly
+      let bird = mock(Bird.self)
+      let tree = Tree(with: bird)
+      given(bird.getCanFly()) ~> true
+      
+      // When the tree is shaken
+      tree.shake()
+      
+      // Then the bird flies away
+      verify(bird.fly()).wasCalled()
     }
 
 }

@@ -7,7 +7,4 @@
 
 import Foundation
 
-protocol MockTwoProtocol {
-    func canWalk() -> Bool
-    func canJump()
-}
+

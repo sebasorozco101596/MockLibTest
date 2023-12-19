@@ -12,6 +12,8 @@
 		62B564CE2B31F4B800012CFA /* MockTwoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B564CD2B31F4B800012CFA /* MockTwoProtocol.swift */; };
 		62B564CF2B31F59400012CFA /* MockTwoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B564CD2B31F4B800012CFA /* MockTwoProtocol.swift */; };
 		62B564D72B3209B100012CFA /* MockLibTestTests-MockLibTestMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B564D62B3209B100012CFA /* MockLibTestTests-MockLibTestMocks.generated.swift */; };
+		62B564D92B320AC600012CFA /* MockTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B564D82B320AC600012CFA /* MockTwo.swift */; };
+		62B564DB2B321CBD00012CFA /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B564DA2B321CBD00012CFA /* Tree.swift */; };
 		62D4800A2B31E73100771E2F /* MockLibTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D480092B31E73100771E2F /* MockLibTestApp.swift */; };
 		62D4800C2B31E73100771E2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D4800B2B31E73100771E2F /* ContentView.swift */; };
 		62D4800E2B31E73300771E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62D4800D2B31E73300771E2F /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		62B564C92B31ECE800012CFA /* BirdTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdTest.swift; sourceTree = "<group>"; };
 		62B564CD2B31F4B800012CFA /* MockTwoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwoProtocol.swift; sourceTree = "<group>"; };
 		62B564D62B3209B100012CFA /* MockLibTestTests-MockLibTestMocks.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MockLibTestTests-MockLibTestMocks.generated.swift"; path = "MockingbirdMocks/MockLibTestTests-MockLibTestMocks.generated.swift"; sourceTree = "<group>"; };
+		62B564D82B320AC600012CFA /* MockTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwo.swift; sourceTree = "<group>"; };
+		62B564DA2B321CBD00012CFA /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		62D480062B31E73100771E2F /* MockLibTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockLibTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D480092B31E73100771E2F /* MockLibTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLibTestApp.swift; sourceTree = "<group>"; };
 		62D4800B2B31E73100771E2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				62D4800D2B31E73300771E2F /* Assets.xcassets */,
 				62D4800F2B31E73300771E2F /* MockLibTest.entitlements */,
 				62D480102B31E73300771E2F /* Preview Content */,
+				62B564D82B320AC600012CFA /* MockTwo.swift */,
+				62B564DA2B321CBD00012CFA /* Tree.swift */,
 			);
 			path = MockLibTest;
 			sourceTree = "<group>";
@@ -332,6 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B564DB2B321CBD00012CFA /* Tree.swift in Sources */,
+				62B564D92B320AC600012CFA /* MockTwo.swift in Sources */,
 				62D4800C2B31E73100771E2F /* ContentView.swift in Sources */,
 				62B564CE2B31F4B800012CFA /* MockTwoProtocol.swift in Sources */,
 				62D4800A2B31E73100771E2F /* MockLibTestApp.swift in Sources */,

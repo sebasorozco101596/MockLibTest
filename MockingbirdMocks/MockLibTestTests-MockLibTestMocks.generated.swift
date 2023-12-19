@@ -14,6 +14,78 @@ import SwiftUI
 
 private let mkbGenericStaticMockContext = Mockingbird.GenericStaticMockContext()
 
+// MARK: - Mocked Bird
+public final class BirdMock: MockLibTest.Bird, Mockingbird.Mock {
+  typealias MockingbirdSupertype = MockLibTest.Bird
+  public static let mockingbirdContext = Mockingbird.Context()
+  public let mockingbirdContext = Mockingbird.Context(["generator_version": "0.20.0", "module_name": "MockLibTest"])
+
+  // MARK: Mocked canFly
+  public var `canFly`: Bool {
+    get {
+      return self.mockingbirdContext.mocking.didInvoke(Mockingbird.SwiftInvocation(selectorName: "canFly.getter", setterSelectorName: "canFly.setter", selectorType: Mockingbird.SelectorType.getter, arguments: [], returnType: Swift.ObjectIdentifier((Bool).self))) {
+        self.mockingbirdContext.recordInvocation($0)
+        let mkbImpl = self.mockingbirdContext.stubbing.implementation(for: $0)
+        if let mkbImpl = mkbImpl as? () -> Bool { return mkbImpl() }
+        if let mkbImpl = mkbImpl as? () -> Any { return Mockingbird.dynamicCast(mkbImpl()) as Bool }
+        for mkbTargetBox in self.mockingbirdContext.proxy.targets(for: $0) {
+          switch mkbTargetBox.target {
+          case .super:
+            break
+          case .object(let mkbObject):
+            guard var mkbObject = mkbObject as? MockingbirdSupertype else { break }
+            let mkbValue: Bool = mkbObject.`canFly`
+            self.mockingbirdContext.proxy.updateTarget(&mkbObject, in: mkbTargetBox)
+            return mkbValue
+          }
+        }
+        if let mkbValue = self.mockingbirdContext.stubbing.defaultValueProvider.value.provideValue(for: (Bool).self) { return mkbValue }
+        self.mockingbirdContext.stubbing.failTest(for: $0, at: self.mockingbirdContext.sourceLocation)
+      }
+    }
+  }
+
+  public func getCanFly() -> Mockingbird.Mockable<Mockingbird.PropertyGetterDeclaration, () -> Bool, Bool> {
+    return Mockingbird.Mockable<Mockingbird.PropertyGetterDeclaration, () -> Bool, Bool>(context: self.mockingbirdContext, invocation: Mockingbird.SwiftInvocation(selectorName: "canFly.getter", setterSelectorName: "canFly.setter", selectorType: Mockingbird.SelectorType.getter, arguments: [], returnType: Swift.ObjectIdentifier((Bool).self)))
+  }
+
+  fileprivate init(sourceLocation: Mockingbird.SourceLocation) {
+    self.mockingbirdContext.sourceLocation = sourceLocation
+    BirdMock.mockingbirdContext.sourceLocation = sourceLocation
+  }
+
+  // MARK: Mocked `fly`()
+  public func `fly`() -> Void {
+    return self.mockingbirdContext.mocking.didInvoke(Mockingbird.SwiftInvocation(selectorName: "`fly`() -> Void", selectorType: Mockingbird.SelectorType.method, arguments: [], returnType: Swift.ObjectIdentifier((Void).self))) {
+      self.mockingbirdContext.recordInvocation($0)
+      let mkbImpl = self.mockingbirdContext.stubbing.implementation(for: $0)
+      if let mkbImpl = mkbImpl as? () -> Void { return mkbImpl() }
+      for mkbTargetBox in self.mockingbirdContext.proxy.targets(for: $0) {
+        switch mkbTargetBox.target {
+        case .super:
+          break
+        case .object(let mkbObject):
+          guard var mkbObject = mkbObject as? MockingbirdSupertype else { break }
+          let mkbValue: Void = mkbObject.`fly`()
+          self.mockingbirdContext.proxy.updateTarget(&mkbObject, in: mkbTargetBox)
+          return mkbValue
+        }
+      }
+      if let mkbValue = self.mockingbirdContext.stubbing.defaultValueProvider.value.provideValue(for: (Void).self) { return mkbValue }
+      self.mockingbirdContext.stubbing.failTest(for: $0, at: self.mockingbirdContext.sourceLocation)
+    }
+  }
+
+  public func `fly`() -> Mockingbird.Mockable<Mockingbird.FunctionDeclaration, () -> Void, Void> {
+    return Mockingbird.Mockable<Mockingbird.FunctionDeclaration, () -> Void, Void>(context: self.mockingbirdContext, invocation: Mockingbird.SwiftInvocation(selectorName: "`fly`() -> Void", selectorType: Mockingbird.SelectorType.method, arguments: [], returnType: Swift.ObjectIdentifier((Void).self)))
+  }
+}
+
+/// Returns a concrete mock of `Bird`.
+public func mock(_ type: MockLibTest.Bird.Protocol, file: StaticString = #file, line: UInt = #line) -> BirdMock {
+  return BirdMock(sourceLocation: Mockingbird.SourceLocation(file, line))
+}
+
 // MARK: - Mocked MockTwoProtocol
 public final class MockTwoProtocolMock: MockLibTest.MockTwoProtocol, Mockingbird.Mock {
   typealias MockingbirdSupertype = MockLibTest.MockTwoProtocol
